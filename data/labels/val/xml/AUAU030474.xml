@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<annotation>
+		<folder>driving_annotation_dataset</folder>
+		<filename>AUAU030474.jpg</filename>
+		<size>
+			<width>640</width>
+			<height>640</height>
+			<depth>3</depth>
+		</size>
+		<object>
+			<name>CV</name>
+			<pose>Unspecified</pose>
+			<truncated>0</truncated>
+			<difficult>0</difficult>
+			<bndbox>
+				<xmin>513</xmin>
+				<ymin>543</ymin>
+				<xmax>549</xmax>
+				<ymax>587</ymax>
+			</bndbox>
+		</object>
+	</annotation>

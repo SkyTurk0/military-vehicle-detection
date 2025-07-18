@@ -1,0 +1,6 @@
+train: data/images/train
+val: data/images/val
+test: data/test
+
+nc: 5
+names: [ 'LMV', 'SMV', 'MCV', 'CV', 'AFV' ]

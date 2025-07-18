@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<annotation>
+		<folder>driving_annotation_dataset</folder>
+		<filename>AUAU030012.jpg</filename>
+		<size>
+			<width>640</width>
+			<height>640</height>
+			<depth>3</depth>
+		</size>
+		<object>
+			<name>AFV</name>
+			<pose>Unspecified</pose>
+			<truncated>0</truncated>
+			<difficult>0</difficult>
+			<bndbox>
+				<xmin>48</xmin>
+				<ymin>117</ymin>
+				<xmax>133</xmax>
+				<ymax>174</ymax>
+			</bndbox>
+		</object>
+	</annotation>

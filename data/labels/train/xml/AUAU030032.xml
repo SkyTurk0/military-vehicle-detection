@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<annotation>
+		<folder>driving_annotation_dataset</folder>
+		<filename>AUAU030032.jpg</filename>
+		<size>
+			<width>640</width>
+			<height>640</height>
+			<depth>3</depth>
+		</size>
+		<object>
+			<name>SMV</name>
+			<pose>Unspecified</pose>
+			<truncated>0</truncated>
+			<difficult>0</difficult>
+			<bndbox>
+				<xmin>459</xmin>
+				<ymin>548</ymin>
+				<xmax>509</xmax>
+				<ymax>614</ymax>
+			</bndbox>
+		</object>
+	</annotation>

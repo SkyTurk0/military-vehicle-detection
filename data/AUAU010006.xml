@@ -1,0 +1,14 @@
+<annotation verified="yes">
+	<folder>train</folder>
+	<filename>AUAU010006.jpg</filename>
+	<path>C:\Users\soyle\mvrsd-yolov8\data\images\train\AUAU010006.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

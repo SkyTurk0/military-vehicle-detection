@@ -1,0 +1,23 @@
+# Virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# Model training outputs (except best.pt)
+runs/
+!runs/**/weights/best.pt
+
+# Cache, checkpoints
+*.cache
+*.pt.old
+*.log
+
+# Large datasets (optional)
+data/images/train/
+data/images/val/
+data/images/test/
+
+# OS + IDE stuff
+.DS_Store
+Thumbs.db
+.vscode/
