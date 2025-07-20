@@ -26,26 +26,8 @@ This repository contains all resources and results related to training YOLO mode
 
 ---
 
-## 📁 Folder Structure
 
-```
-mvrsd-yolov8/
-├── data/                # Dataset
-│   ├── images/
-│   └── labels/
-├── results/             # YOLO training outputs
-│   └── 12m_exp15/       # YOLOv12m training session
-│       ├── labels.jpg   # Training labels visualized
-│       ├── confusion_matrix.png
-│       ├── results.png  # mAP, loss curves
-│       └── weights/
-│           ├── best.pt  # Best model checkpoint
-├── data.yaml            # Dataset config file
-├── .gitignore
-└── README.md
-```
 
----
 
 ## 🏋️‍♂️ Training Instructions
 
@@ -87,8 +69,18 @@ yolo detect val \
 
 ## 📷 Example Results
 
+YOLO12M
+![Training Curves](results/12m_exp15/results.png)
+![Confusion Matrix](results/12m_exp15/confusion_matrix.png)
+
+<img src="results\12m_exp15\val_batch1_labels.jpg" width="400"/> <img src="results\12m_exp15\val_batch1_pred.jpg" width="400"/>
 
 
+YOLOV8n
+![Training Curves](results/train5/results.png)
+![Confusion Matrix](results/train5/confusion_matrix.png)
+
+<img src="results\train5\val_batch1_labels.jpg" width="400"/> <img src="results\train5\val_batch1_pred.jpg" width="400"/>
 
 
 > 🔎 Class-wise mAPs:
