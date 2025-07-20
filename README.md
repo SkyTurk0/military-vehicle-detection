@@ -8,26 +8,18 @@ A professional deep learning project for training and evaluating object detectio
 
 This repository contains all resources and results related to training YOLO models for object detection on satellite images of military vehicles. The goal is to detect and classify five classes of vehicles in low-resolution aerial images.
 
-- Dataset: [MV-RSD Dataset](https://scidb.ai) *(downloaded from SciDB)*
+- Dataset: [MV-RSD Dataset](https://www.scidb.cn/en/detail?dataSetId=2731ac4153464495b4dfd3caa8a9b0a0) *(downloaded from SciDB)*
 - Models trained:
   - `YOLOv8n` (lightweight baseline)
   - `YOLOv12m` (mid-weight architecture for better performance)
 
----
 
 ## 🧠 Project Highlights
 
 | Model    | Box Precision | Recall | mAP\@0.5 | mAP\@0.5:0.95 |
 | -------- | ------------- | ------ | -------- | ------------- |
 | YOLOv8n  | 0.879         | 0.79   | 0.877    | 0.614         |
-| YOLOv12m | 0.871         | 0.831  | 0.883    | 0.620         |
-
-*Trained with batch size 10, img size 640, 50 epochs.*
-
----
-
-
-
+| YOLOv12m | 0.852         | 0.832  | 0.877    | 0.624         |
 
 ## 🏋️‍♂️ Training Instructions
 
@@ -40,7 +32,7 @@ yolo detect train \
   imgsz=640 \
   batch=16 \
   project=results \
-  name=8n_exp1
+  name=8n_run
 
 # Train YOLOv12m
 yolo detect train \
@@ -51,45 +43,54 @@ yolo detect train \
   batch=10 \
   cache=True \
   project=results \
-  name=12m_exp15
+  name=12m_run
 ```
 
----
-
-## 🔍 Validation Command
-
-```bash
-# Evaluate a trained model
-yolo detect val \
-  model=results/12m_exp15/weights/best.pt \
-  data=data.yaml
-```
 
 ---
 
 ## 📷 Example Results
 
 YOLO12M
-![Training Curves](results/12m_exp15/results.png)
-![Confusion Matrix](results/12m_exp15/confusion_matrix.png)
+![Training Curves](results/12m_run/results.png)
+![Confusion Matrix](results/12m_run/confusion_matrix.png)
 
-<img src="results\12m_exp15\val_batch1_labels.jpg" width="400"/> <img src="results\12m_exp15\val_batch1_pred.jpg" width="400"/>
+<img src="results\12m_run\val_batch1_labels.jpg" width="400"/> <img src="results\12m_run\val_batch1_pred.jpg" width="400"/>
 
 
 YOLOV8n
-![Training Curves](results/train5/results.png)
-![Confusion Matrix](results/train5/confusion_matrix.png)
+![Training Curves](results/8n_run/results.png)
+![Confusion Matrix](results/8n_run/confusion_matrix.png)
 
-<img src="results\train5\val_batch1_labels.jpg" width="400"/> <img src="results\train5\val_batch1_pred.jpg" width="400"/>
+<img src="results\8n_run\val_batch1_labels.jpg" width="400"/> <img src="results\8n_run\val_batch1_pred.jpg" width="400"/>
 
 
 > 🔎 Class-wise mAPs:
 >
-> - LMV: 0.656
-> - SMV: 0.658
-> - MCV: 0.635
-> - CV: 0.735
-> - AFV: 0.416
+| Class | YOLOv8n mAP50 | YOLOv12m mAP50 |
+| ----- | ------------- | -------------- |
+| LMV   | 0.896         | 0.921          |
+| SMV   | 0.901         | 0.913          |
+| MCV   | 0.938         | 0.901          |
+| CV    | 0.980         | 0.980          |
+| AFV   | 0.671         | 0.671          |
+
+---
+## 📈 Evaluation & Discussion
+
+- **Results Interpretation**: Both models achieved strong detection scores, with **YOLOv8n** slightly outperforming **YOLOv12m** in overall mAP50 despite having far fewer parameters. The larger model, while more capable in theory, did not generalize significantly better under current training constraints.
+
+- **Limitations**:
+
+  - Small vehicles like AFVs performed the worst across both models.
+  - Image quality and resolution limited detection accuracy.
+  - Overlapping objects and low variation in lighting/weather impacted generalization.
+
+- **Takeaways**:
+
+  - A well-tuned smaller model (YOLOv8n) may be more efficient for edge deployments.
+  - Improvements in data quality, better augmentation, or using higher input resolutions could enhance results.
+  - Future experiments could test focal loss or dataset rebalancing.
 
 ---
 
