@@ -11,7 +11,7 @@ This repository contains all resources and results related to training YOLO mode
 - Dataset: [MV-RSD Dataset](https://www.scidb.cn/en/detail?dataSetId=2731ac4153464495b4dfd3caa8a9b0a0) *(downloaded from SciDB)*
 - Models trained:
   - `YOLOv8n` (lightweight baseline)
-  - `YOLOv12m` (mid-weight architecture for better performance)
+  - `YOLO12m` (mid-weight architecture for better performance)
 
 
 ## 🧠 Project Highlights
@@ -19,7 +19,7 @@ This repository contains all resources and results related to training YOLO mode
 | Model    | Box Precision | Recall | mAP\@0.5 | mAP\@0.5:0.95 |
 | -------- | ------------- | ------ | -------- | ------------- |
 | YOLOv8n  | 0.879         | 0.79   | 0.877    | 0.614         |
-| YOLOv12m | 0.852         | 0.832  | 0.877    | 0.624         |
+| YOLO12m  | 0.852         | 0.832  | 0.877    | 0.624         |
 
 ## 🏋️‍♂️ Training Instructions
 
@@ -34,7 +34,7 @@ yolo detect train \
   project=results \
   name=8n_run
 
-# Train YOLOv12m
+# Train YOLO12m
 yolo detect train \
   data=data.yaml \
   model=yolo12m.pt \
@@ -67,7 +67,7 @@ YOLOV8n
 
 > 🔎 Class-wise mAPs:
 >
-| Class | YOLOv8n mAP50 | YOLOv12m mAP50 |
+| Class | YOLOv8n mAP50 | YOLO12m mAP50  |
 | ----- | ------------- | -------------- |
 | LMV   | 0.896         | 0.921          |
 | SMV   | 0.901         | 0.913          |
@@ -78,7 +78,7 @@ YOLOV8n
 ---
 ## 📈 Evaluation & Discussion
 
-- **Results Interpretation**: Both models achieved strong detection scores, with **YOLOv8n** slightly outperforming **YOLOv12m** in overall mAP50 despite having far fewer parameters. The larger model, while more capable in theory, did not generalize significantly better under current training constraints.
+- **Results Interpretation**: Both models achieved strong detection scores, with **YOLOv8n** slightly outperforming **YOLO12m** in overall mAP50 despite having far fewer parameters. The larger model, while more capable in theory, did not generalize significantly better under current training constraints.
 
 - **Limitations**:
 
