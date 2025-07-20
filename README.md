@@ -1,6 +1,6 @@
 # MV-RSD YOLO: Object Detection on Military Vehicles Dataset
 
-A professional deep learning project for training and evaluating object detection models on the **MV-RSD (Military Vehicle Remote Sensing Dataset)** using **YOLOv8n** and **YOLOv12m** architectures.
+A professional deep learning project for training and evaluating object detection models on the **MV-RSD (Military Vehicle Remote Sensing Dataset)** using **YOLOv8n** and **YOLO12m** architectures.
 
 ---
 
@@ -51,7 +51,7 @@ yolo detect train \
 
 ## 📷 Example Results
 
-YOLO12M
+YOLO12m
 ![Training Curves](results/12m_run/results.png)
 ![Confusion Matrix](results/12m_run/confusion_matrix.png)
 
